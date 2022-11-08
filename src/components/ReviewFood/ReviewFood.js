@@ -13,43 +13,43 @@ const ReviewFood = () => {
         const phone = form.phone.value;
         const message = form.message.value;
 
-        const order = {
-            service_id: _id,
-            serviceName: title,
-            price,
-            customer: name,
-            email,
-            phone,
-            message,
+        // const order = {
+        //     service_id: _id,
+        //     serviceName: title,
+        //     price,
+        //     customer: name,
+        //     email,
+        //     phone,
+        //     message,
 
-        };
+        // };
         // if (phone.length > 11) {
         //     alert('phone charecter should be 11 charecter or longer');
         // }
         // else{
 
         // }
-        fetch('http://localhost:5000/orders', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                authorization: `Bearer ${localStorage.getItem('genius token')}`
-            },
-            body: JSON.stringify(order)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.acknowledged) {
-                    alert('order placed successfully');
-                    form.reset();
-                }
-            })
-            .catch(err => console.error(err));
+        // fetch('http://localhost:5000/orders', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json',
+        //         authorization: `Bearer ${localStorage.getItem('genius token')}`
+        //     },
+        //     body: JSON.stringify(order)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.acknowledged) {
+        //             alert('order placed successfully');
+        //             form.reset();
+        //         }
+        //     })
+        //     .catch(err => console.error(err));
     }
     return (
         <div>
-            <form onSubmit={handlePlaceReview}>
+            {/* <form onSubmit={handlePlaceReview}>
                 <h2 className="text-4xl">You are about to review: {title}</h2>
                 <h4 className="text-3xl">Price: {price}</h4>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
@@ -60,7 +60,8 @@ const ReviewFood = () => {
                 </div>
                 <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Your message" required></textarea>
                 <input className='btn' type="submit" value="Place Your Order" />
-            </form>
+            </form> */}
+            <h3>review</h3>
         </div>
     );
 };
