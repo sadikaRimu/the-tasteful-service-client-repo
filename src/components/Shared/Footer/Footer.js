@@ -1,22 +1,23 @@
 import React from 'react';
+import logo from '../../../assets/images/Logo/foodlogo.jpg';
 
 const Footer = () => {
     return (
-        <footer className="footer p-32 bg-slate-200 text-blue">
+        <footer className="footer p-32 bg-nutral-200 text-blue">
             <div>
-                {/* <img src={logo} alt="" /> */}
-                <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+                <img className='h-20 w-25 rounded' src={logo} alt="" />
+                <p>The Tasteful Service<br />Providing by Sadika Afrin since 2022</p>
             </div>
             <div>
                 <span className="footer-title">Services</span>
-                <a href='/' className="link link-hover">Branding</a>
-                <a href='/' className="link link-hover">Design</a>
-                <a href='/' className="link link-hover">Marketing</a>
-                <a href='/' className="link link-hover">Advertisement</a>
+                <a href='/' className="link link-hover">Lunch</a>
+                <a href='/' className="link link-hover">Breakfast</a>
+                <a href='/' className="link link-hover">Dinner</a>
+                <a href='/' className="link link-hover">Snacks</a>
             </div>
             <div>
-                <span className="footer-title">Company</span>
-                <a href='/' className="link link-hover">About us</a>
+                <span className="footer-title">Owner</span>
+                <a href='/' className="link link-hover">About me</a>
                 <a href='/' className="link link-hover">Contact</a>
                 <a href='/' className="link link-hover">Jobs</a>
                 <a href='/' className="link link-hover">Press kit</a>
