@@ -1,41 +1,35 @@
 [
     {
-        "service_id": "04",
         "title": "Bhorta (Mashed Vegetables with Spices)",
         "img": "https://images.unsplash.com/photo-1606791422814-b32c705e3e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29va2VkJTIwZm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         "price": "20.00",
         "description": "Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12"
     },
     {
-        "service_id": "05",
         "title": "Sheek Kebab with Naan (Kebab with Flatbread)",
         "img": "https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y29va2VkJTIwZm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         "price": "20.00",
         "description": "Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12"
     },
     {
-        "service_id": "01",
         "title": "Bhuna Khichuri with Dim Bhaji (Yellow Rice with Omelette)",
         "img": "https://images.unsplash.com/photo-1596560548464-f010549b84d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29va2VkJTIwZm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
         "price": "200.00",
         "description": "Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12"
     },
     {
-        "service_id": "02",
         "title": "Beef Kala Bhuna (Beef Curry)",
         "img": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvb2tlZCUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
         "price": "150.00",
         "description": "Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12"
     },
     {
-        "service_id": "03",
         "title": "Kacchi Biriyani (Mutton Biriyani)",
         "img": "https://images.unsplash.com/photo-1528451635828-f28cd48439a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNvb2tlZCUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
         "price": "30.00",
         "description": "Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12.Six pieces of crispy crab Rangoon stuffed with creamy cheese and jumbo lump crab 12"
     },
     {
-        "service_id": "06",
         "title": "Shorshe Ilish (Hilsa Fish with Mustard Curry)",
         "img": "https://images.unsplash.com/photo-1569058242252-623df46b5025?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGNvb2tlZCUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
         "price": "20.00",
