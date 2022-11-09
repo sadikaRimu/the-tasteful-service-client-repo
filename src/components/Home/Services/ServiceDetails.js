@@ -1,12 +1,36 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import useTitle from '../../../hooks/useTitle';
+import ReviewFood from '../../ReviewFood/ReviewFood';
 
 const ServiceDetails = () => {
     const { _id, title, price, img, description } = useLoaderData();
     const { user } = useContext(AuthContext);
+    const [showReview, setShowReview] = useState([]);
+    const [reviewData, setReviewData] = useState([]);
     useTitle('Service Details');
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                let msg = [];
+                let reviewInfo = [];
+                data.map(element => {
+
+                    if (element.service === _id) {
+                        msg.push(element.message);
+                        reviewInfo.push(element);
+                    }
+                    setShowReview(msg);
+                    setReviewData(reviewInfo);
+                    return msg;
+                })
+
+            })
+    }, []);
+
     const handleReview = event => {
         event.preventDefault();
         const form = event.target;
@@ -81,6 +105,23 @@ const ServiceDetails = () => {
 
                 </div>
             </div>
+            {
+                reviewData ? <div>
+                    <div className="overflow-x-auto w-full">
+                        <table className="table w-full">
+
+                            <tbody>
+                                {
+                                    reviewData.map(reviewElement => <><td className='font-bold text-center'>Review: {reviewElement.message}
+                                    </td><td>Customer Email: {reviewElement.email}</td></>)
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div >
+                    :
+                    'No review yet'
+            }
         </div>
     );
 };

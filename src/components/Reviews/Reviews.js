@@ -65,6 +65,29 @@ const Reviews = () => {
                 }
             })
     }
+    const handleUpdateReview = (_id, review) => {
+        // event.preventDefault();
+        console.log(_id, review);
+        fetch(`http://localhost:5000/reviews/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reviews)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                // if (data.modifiedCount > 0) {
+                //     const remaining = reviews.filter(review => review._id !== _id);
+                //     const approving = reviews.find(review => review._id === _id);
+                //     approving.status = 'Approved';
+                //     const newReviews = [...remaining, approving];
+                //     setReviews(newReviews);
+                // }
+            })
+
+    }
     return (
         <div>
             <h2 className='text-5xl mb-3'>you have {reviews.length} Reviews</h2>
@@ -89,6 +112,7 @@ const Reviews = () => {
                                 review={review}
                                 handleDelete={handleDelete}
                                 handleStatusUpdate={handleStatusUpdate}
+                                handleUpdateReview={handleUpdateReview}
                             ></ReviewRow>)
 
                         }

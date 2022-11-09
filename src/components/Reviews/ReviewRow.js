@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
-const ReviewRow = ({ review, handleDelete, handleStatusUpdate }) => {
+const ReviewRow = ({ review, handleDelete, handleStatusUpdate, handleUpdateReview }) => {
     const { _id, serviceName, customer, price, email, phone, service, status, message } = review;
     const { user } = useContext(AuthContext);
     const [reviewService, setReviewService] = useState({})
@@ -53,6 +53,32 @@ const ReviewRow = ({ review, handleDelete, handleStatusUpdate }) => {
             </td>
             <th>
                 <button onClick={() => handleStatusUpdate(_id)} className="btn btn-ghost btn-xs">{status ? status : 'pending..'}</button>
+
+                <div className="card-actions justify-end">
+
+                    <label htmlFor="my-modal-5" className="btn">Edit</label>
+                    <input type="checkbox" id="my-modal-5" className="modal-toggle" />
+                    <div className="modal">
+                        <div className="modal-box w-11/12 max-w-5xl">
+                            <h3 className="font-bold text-lg mb-5">Edit Your Reviews: </h3>
+                            <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                            <form onSubmit={() => handleUpdateReview(_id, review)}>
+                                <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2'>
+                                    <input className='h-20 w-20' name='photoURL' type='image' src={user?.photoURL} alt='' readOnly />
+                                    <input name='displayName' type="text" placeholder="customer Name" defaultValue={user?.displayName} className="input input-ghost w-full input-bordered" readOnly />
+                                    <input name='phone' type="text" defaultValue={phone} placeholder="Your phone" className="input input-ghost w-full input-bordered " required />
+                                    <input name='email' type="text" placeholder="Your Email" defaultValue={user?.email} className="input input-ghost w-full input-bordered " readOnly />
+                                </div>
+                                <textarea name='message' className="textarea textarea-bordered h-24 w-full" defaultValue={message} placeholder="Your Review" required></textarea>
+                                <div className="modal-action">
+                                    <input type='submit' htmlFor="my-modal-5" value='Edit Review' className="btn" />
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
             </th>
         </tr>
     );
