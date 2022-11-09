@@ -3,12 +3,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import img from '../../assets/images/Logo/foodlogo.jpg';
 import SocialLogin from './SocialLogin/SocialLogin';
+import useTitle from '../../hooks/useTitle';
 
 
 const Login = () => {
     const { login } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    useTitle('Login')
     const from = location.state?.from?.pathname || '/';
     const handleLogin = event => {
         event.preventDefault();
