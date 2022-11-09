@@ -8,6 +8,7 @@ import ReviewFood from "../../components/ReviewFood/ReviewFood";
 import Reviews from "../../components/Reviews/Reviews";
 import SignUp from "../../components/SignUp/SignUp";
 import Main from "../../Layout/Main";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -32,11 +33,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/reviews',
-                element: <Reviews></Reviews>
+                element: <PrivateRoute><Reviews></Reviews></PrivateRoute>
             },
             {
                 path: '/addServices',
-                element: <AddServices></AddServices>
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
             },
             {
                 path: '/services/:id',

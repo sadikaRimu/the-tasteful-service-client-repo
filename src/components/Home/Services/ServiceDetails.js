@@ -83,25 +83,50 @@ const ServiceDetails = () => {
 
                     <label htmlFor="my-modal-5" className="btn">Add Review</label>
                     <input type="checkbox" id="my-modal-5" className="modal-toggle" />
-                    <div className="modal">
-                        <div className="modal-box w-11/12 max-w-5xl">
-                            <h3 className="font-bold text-lg mb-5">You are about to Review: {title}</h3>
-                            <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                            <form onSubmit={handleReview}>
-                                <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2'>
-                                    <input className='h-20 w-20' name='photoURL' type='image' src={user?.photoURL} alt='' readOnly />
-                                    <input name='displayName' type="text" placeholder="customer Name" defaultValue={user?.displayName} className="input input-ghost w-full input-bordered" readOnly />
-                                    <input name='phone' type="text" placeholder="Your phone" className="input input-ghost w-full input-bordered " required />
-                                    <input name='email' type="text" placeholder="Your Email" defaultValue={user?.email} className="input input-ghost w-full input-bordered " readOnly />
-                                </div>
-                                <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Your Review" required></textarea>
-                                <div className="modal-action">
-                                    <input type='submit' htmlFor="my-modal-5" value='Place Review' className="btn" />
-                                </div>
-                            </form>
+                    {
+                        user?.email ?
+                            <>
+                                <div className="modal">
+                                    <div className="modal-box w-11/12 max-w-5xl">
+                                        <h3 className="font-bold text-lg mb-5">You are about to Review: {title}</h3>
+                                        <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                                        <form onSubmit={handleReview}>
+                                            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2'>
+                                                <input className='h-20 w-20' name='photoURL' type='image' src={user?.photoURL} alt='' readOnly />
+                                                <input name='displayName' type="text" placeholder="customer Name" defaultValue={user?.displayName} className="input input-ghost w-full input-bordered" readOnly />
+                                                <input name='phone' type="text" placeholder="Your phone" className="input input-ghost w-full input-bordered " required />
+                                                <input name='email' type="text" placeholder="Your Email" defaultValue={user?.email} className="input input-ghost w-full input-bordered " readOnly />
+                                            </div>
+                                            <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Your Review" required></textarea>
+                                            <div className="modal-action">
+                                                <input type='submit' htmlFor="my-modal-5" value='Place Review' className="btn" />
+                                            </div>
+                                        </form>
 
-                        </div>
-                    </div>
+                                    </div>
+                                </div>
+                            </>
+                            :
+                            <>
+                                <div className="modal">
+                                    <div className="modal-box w-11/12 max-w-5xl">
+                                        <h3 className="font-bold text-lg mb-5">You Have to login?sign up first to add review</h3>
+                                        <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+
+                                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2'>
+                                        </div>
+
+                                        <div className="modal-action">
+
+                                            <button className='btn'><Link to='/login'>Login</Link></button>
+                                            <button className='btn'><Link to='/signup'>Sign Up</Link></button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </>
+                    }
 
                 </div>
             </div>
