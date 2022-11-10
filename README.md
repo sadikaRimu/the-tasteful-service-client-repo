@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+website Name: The Tastful Service. it's about personal food delivery service
+Features:
+->Food Services: User can get food services, 
+->Add Services: user can add new services
+->Sign up: user have to sign up to add services and view reviews 
+->Login: user have to login to review food services
+->My Review: this section shows all the reviews that given by user. reviews can be deleted,updated by user
+Live website link:
+->
