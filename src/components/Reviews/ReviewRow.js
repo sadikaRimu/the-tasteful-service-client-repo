@@ -7,7 +7,7 @@ const ReviewRow = ({ review, handleDelete, handleStatusUpdate }) => {
     const [reviewService, setReviewService] = useState({});
     const [updateReview, setUpdateReview] = useState(review);
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://sadika-assignment11-server.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => setReviewService(data));
     }, [service])
@@ -31,7 +31,7 @@ const ReviewRow = ({ review, handleDelete, handleStatusUpdate }) => {
             phone,
             message
         }
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://sadika-assignment11-server.vercel.app/reviews/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

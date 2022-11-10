@@ -43,12 +43,12 @@ const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://sadika-assignment11-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/servicesall',
                 element: <ServicesAll></ServicesAll>,
-                loader: () => fetch('http://localhost:5000/servicesall')
+                loader: () => fetch('https://sadika-assignment11-server.vercel.app/servicesall')
             }
         ]
     }

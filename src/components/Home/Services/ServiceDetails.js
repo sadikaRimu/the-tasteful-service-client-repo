@@ -11,7 +11,7 @@ const ServiceDetails = () => {
     const [reviewData, setReviewData] = useState([]);
     useTitle('Service Details');
     useEffect(() => {
-        fetch('http://localhost:5000/reviewsall')
+        fetch('https://sadika-assignment11-server.vercel.app/reviewsall')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -58,7 +58,7 @@ const ServiceDetails = () => {
         // else{
 
         // }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://sadika-assignment11-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
