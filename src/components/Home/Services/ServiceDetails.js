@@ -138,7 +138,9 @@ const ServiceDetails = () => {
                             <tbody>
                                 {
                                     reviewData.map(reviewElement => <><td className='font-bold text-center'>Review: {reviewElement.message}
-                                    </td><td>Customer Email: {reviewElement.email}</td></>)
+                                    </td>
+                                        <td>{reviewElement.email}<br />
+                                            <small>{reviewElement.phone}</small></td></>)
                                 }
                             </tbody>
                         </table>

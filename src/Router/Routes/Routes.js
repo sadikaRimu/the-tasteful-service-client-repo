@@ -6,6 +6,7 @@ import ServiceDetails from "../../components/Home/Services/ServiceDetails";
 import Login from "../../components/Login/Login";
 import ReviewFood from "../../components/ReviewFood/ReviewFood";
 import Reviews from "../../components/Reviews/Reviews";
+import ServicesAll from "../../components/ServicesAll/ServicesAll";
 import SignUp from "../../components/SignUp/SignUp";
 import Main from "../../Layout/Main";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -44,11 +45,11 @@ const router = createBrowserRouter([
                 element: <ServiceDetails></ServiceDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
-            // {
-            //     path: '/services/:id',
-            //     element: <ReviewFood></ReviewFood>,
-            //     loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
-            // }
+            {
+                path: '/servicesall',
+                element: <ServicesAll></ServicesAll>,
+                loader: () => fetch('http://localhost:5000/servicesall')
+            }
         ]
     }
 ]);
