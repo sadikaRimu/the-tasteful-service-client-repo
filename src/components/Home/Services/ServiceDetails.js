@@ -11,7 +11,7 @@ const ServiceDetails = () => {
     const [reviewData, setReviewData] = useState([]);
     useTitle('Service Details');
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('http://localhost:5000/reviewsall')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -28,6 +28,8 @@ const ServiceDetails = () => {
                     return msg;
                 })
 
+
+                console.log(reviewData);
             })
     }, []);
 
@@ -39,6 +41,7 @@ const ServiceDetails = () => {
         const phone = form.phone.value;
         const message = form.message.value;
 
+
         const Review = {
             service: _id,
             serviceName: title,
@@ -46,7 +49,8 @@ const ServiceDetails = () => {
             customer: name,
             email,
             phone,
-            message
+            message,
+
         };
         // if (phone.length > 11) {
         //     alert('phone charecter should be 11 charecter or longer');
@@ -58,7 +62,7 @@ const ServiceDetails = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
-                //authorization: `Bearer ${localStorage.getItem('genius token')}`
+
             },
             body: JSON.stringify(Review)
         })
@@ -134,13 +138,13 @@ const ServiceDetails = () => {
                 reviewData ? <div>
                     <div className="overflow-x-auto w-full">
                         <table className="table w-full">
-
+                            <h2 className='text-center font-bold my-5'>All Reviews About this food</h2>
                             <tbody>
                                 {
-                                    reviewData.map(reviewElement => <><td className='font-bold text-center'>Review: {reviewElement.message}
-                                    </td>
-                                        <td>{reviewElement.email}<br />
-                                            <small>{reviewElement.phone}</small></td></>)
+                                    reviewData.map(element => <><h2 className='font-bold text-center'>{element.message}</h2>
+                                        <h2 className='text-center'>{element.email}</h2>
+                                        <h2 className='text-center'>{element.phone}</h2>
+                                    </>)
                                 }
                             </tbody>
                         </table>

@@ -9,14 +9,16 @@ const Reviews = () => {
     useTitle('Reviews');
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
-            // headers: {
-            //     authorization: `Bearer ${localStorage.getItem('genius token')}`
-            // }
+            headers: {
+                //authorization: `Bearer ${localStorage.getItem('food-token')}`
+                authorization: `Bearer ${localStorage.getItem('food-token')}`
+
+            }
         })
             .then(res => {
-                // if (res.status === 401 || res.status === 403) {
-                //     return logout();
-                // }
+                if (res.status === 401 || res.status === 403) {
+                    return logout();
+                }
                 return res.json()
             })
             .then(data => {
@@ -65,29 +67,44 @@ const Reviews = () => {
                 }
             })
     }
-    const handleUpdateReview = (_id, review) => {
-        // event.preventDefault();
-        console.log(_id, review);
-        fetch(`http://localhost:5000/reviews/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(reviews)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                // if (data.modifiedCount > 0) {
-                //     const remaining = reviews.filter(review => review._id !== _id);
-                //     const approving = reviews.find(review => review._id === _id);
-                //     approving.status = 'Approved';
-                //     const newReviews = [...remaining, approving];
-                //     setReviews(newReviews);
-                // }
-            })
+    // const handleInputChange = (event) => {
+    //     const field = event.target.name
+    //     const value = event.target.value;
+    //     const newReview = { ...user }
+    //     newReview[field] = value;
+    //     setUpdateReview(newReview);
+
+    // }
+    const handleUpdateReview = (_id, message, phone) => {
+        //event.preventDefault();
+        //console.log(_id);
+        // const form = event.target;
+        // const id = form.id.value;
+        // const phone = form.phone.value;
+        // const message = form.message.value;
+        console.log(_id, phone, message);
+        // fetch(`http://localhost:5000/reviews/${_id}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     // body: JSON.stringify(updateReview)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         // if (data.modifiedCount > 0) {
+        //         //     const remaining = reviews.filter(review => review._id !== _id);
+        //         //     const approving = reviews.find(review => review._id === _id);
+        //         //     approving.status = 'Approved';
+        //         //     const newReviews = [...remaining, approving];
+        //         //     setReviews(newReviews);
+        //         // }
+        //     })
 
     }
+
+
     return (
         <div>
             <h2 className='text-5xl mb-3'>you have {reviews.length} Reviews</h2>
