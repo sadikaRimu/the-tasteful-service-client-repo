@@ -75,34 +75,6 @@ const Reviews = () => {
     //     setUpdateReview(newReview);
 
     // }
-    const handleUpdateReview = (_id, message, phone) => {
-        //event.preventDefault();
-        //console.log(_id);
-        // const form = event.target;
-        // const id = form.id.value;
-        // const phone = form.phone.value;
-        // const message = form.message.value;
-        console.log(_id, phone, message);
-        // fetch(`http://localhost:5000/reviews/${_id}`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     // body: JSON.stringify(updateReview)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         // if (data.modifiedCount > 0) {
-        //         //     const remaining = reviews.filter(review => review._id !== _id);
-        //         //     const approving = reviews.find(review => review._id === _id);
-        //         //     approving.status = 'Approved';
-        //         //     const newReviews = [...remaining, approving];
-        //         //     setReviews(newReviews);
-        //         // }
-        //     })
-
-    }
 
 
     return (
@@ -129,7 +101,7 @@ const Reviews = () => {
                                 review={review}
                                 handleDelete={handleDelete}
                                 handleStatusUpdate={handleStatusUpdate}
-                                handleUpdateReview={handleUpdateReview}
+
                             ></ReviewRow>)
 
                         }

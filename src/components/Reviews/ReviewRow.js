@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
-const ReviewRow = ({ review, handleDelete, handleStatusUpdate, handleUpdateReview }) => {
+const ReviewRow = ({ review, handleDelete, handleStatusUpdate }) => {
     const { _id, serviceName, customer, price, email, phone, service, status, message } = review;
     const { user } = useContext(AuthContext);
     const [reviewService, setReviewService] = useState({});
@@ -17,6 +17,36 @@ const ReviewRow = ({ review, handleDelete, handleStatusUpdate, handleUpdateRevie
         const newReview = { ...user }
         newReview[field] = value;
         setUpdateReview(newReview);
+
+    }
+    const handleUpdateReview = (event) => {
+        event.preventDefault();
+        //console.log(_id);
+        const form = event.target;
+        const id = form.id.value;
+        const phone = form.phone.value;
+        const message = form.message.value;
+        console.log(id, phone, message);
+        const NewUpdateReview = {
+            phone,
+            message
+        }
+        fetch(`http://localhost:5000/reviews/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(NewUpdateReview)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+
+
+                    alert('Updated successfully');
+                }
+            })
 
     }
 
@@ -71,7 +101,7 @@ const ReviewRow = ({ review, handleDelete, handleStatusUpdate, handleUpdateRevie
                         <div className="modal-box w-11/12 max-w-5xl">
                             <h3 className="font-bold text-lg mb-5">Edit Your Reviews: </h3>
                             <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                            <form onSubmit={() => handleUpdateReview(_id, message, phone)}>
+                            <form onSubmit={handleUpdateReview}>
                                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-2'>
                                     <input name='id' type='text' defaultValue={review._id} hidden />
                                     <input className='h-20 w-20' name='photoURL' type='image' src={user?.photoURL} alt='' readOnly />
